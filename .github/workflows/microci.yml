@@ -15,5 +15,6 @@ jobs:
           chmod 755 ./microCI
           mkdir -p ~/.ssh/
           touch ~/.ssh/config
-          docker run --rm alpine echo "Hello from inside Docker!"
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -N "" -q
           ./microCI | bash
