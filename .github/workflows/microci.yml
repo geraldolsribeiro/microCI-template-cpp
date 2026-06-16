@@ -1,0 +1,13 @@
+name: Execute microCI pipeline
+
+on: [push]
+
+jobs:
+  execute-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Run standard Docker container
+        run: docker run --rm alpine echo "Hello from inside Docker!"
