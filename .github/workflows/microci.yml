@@ -13,5 +13,7 @@ jobs:
         run: |
           curl -fsSL github.com/geraldolsribeiro/microci/releases/download/latest/microCI -o microCI
           chmod 755 ./microCI
+          mkdir -p ~/.ssh/
+          touch ~/.ssh/config
           docker run --rm alpine echo "Hello from inside Docker!"
           ./microCI | bash
