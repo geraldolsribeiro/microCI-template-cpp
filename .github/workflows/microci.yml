@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Run standard Docker container
         run: |
@@ -20,7 +20,7 @@ jobs:
           ./microCI | bash
 
       - name: Save Multiple Outputs
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: multi-artifact
           path: |
